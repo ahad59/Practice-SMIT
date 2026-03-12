@@ -229,3 +229,126 @@ let totalWords = 0;
  const newGreetings = greeting.replaceAll("Hello", "Hey");
  console.log(newGreetings)
 
+ const perfume = 9000.5;
+ //const totalAmount = Math.round(perfume);
+ //const totalAmount = Math.ceil(perfume);
+ const totalAmount = Math.floor(perfume);
+ console.log(totalAmount,perfume)
+
+ const randomNumber = Math.random()
+ console.log(randomNumber)
+
+ //console.log(computerNumber);
+
+ let totalScore = 0;
+ const target = 70;
+
+ while (totalScore < target) {
+   const userNumber = +prompt("Enter your Number");
+
+   const randomNumber = Math.random();
+   const computerNumber = Math.ceil(randomNumber * 6);
+   alert("Computer number is : " + computerNumber);
+
+   const isWicket = userNumber === computerNumber;
+   if (isWicket) {
+     alert("Ohho, Out by Computer (Dumb Machine)");
+     break;
+   } else {
+     totalScore += userNumber;
+     if (totalScore >= target) {
+       alert("Hurrrayy! You won");
+     } else {
+       alert("Your total is: " + totalScore);
+     }
+   }
+ }
+
+ const myNumber = 55;
+ //const myNewNumber = myNumber.toExponential(1)
+ const myNewNumber = myNumber.toFixed(2)
+
+ console.log(myNewNumber,myNumber)
+
+
+ const date = new Date();
+ const dateLocalString = date.toLocaleDateString()
+ const dateIsoString = date.toISOString()
+ const unixTime = date.getTime()
+ console.log(date);
+ console.log(dateLocalString);
+ console.log(dateIsoString);
+ console.log(unixTime);
+
+ const dateString = date.toString();
+console.log(date);
+console.log(dateString);
+console.log(date.toDateString());
+console.log(date.getDay());
+console.log(date.getDate());
+console.log(date.getMonth());
+console.log(date.getFullYear());
+console.log(date.getHours());
+console.log(date.getMinutes());
+console.log(date.getSeconds());
+console.log(date.getMilliseconds());
+console.log(date.getTime());
+
+ const days = [ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+ const date1 = new Date();
+ const day = date.getDay()
+ const dayName = days[2];
+
+ console.log(dayName);
+
+ const today = new Date();
+ const graduationDay = new Date();
+
+ const todayYear = today.getFullYear();
+ console.log(today,todayYear)
+ graduationDay.setFullYear(todayYear + 1);
+ console.log(graduationDay)
+
+
+const word2 = "mathematics";
+let guessWord1 = word2.split("");
+guessWord1[1] = "_";
+guessWord1[3] = "_";
+guessWord1[5] = "_";
+guessWord1[7] = "_";
+guessWord1[9] = "_";
+guessWord1 = guessWord1.join("");
+alert(guessWord1);
+
+const date3 = new Date();
+const startingTime1 = date3.getTime();
+console.log(startingTime1);
+
+const userAnswers1 = [];
+
+for (let i = 0; i < 5; i++) {
+  const answer1 = prompt("Enter the missing letter");
+  userAnswers1.push(answer1);
+}
+
+const finishingDate1 = new Date();
+const finishingTime1 = finishingDate1.getTime();
+
+const timeConsumedInMS1 = finishingTime1 - startingTime1;
+const timeConsumedInSecs1 = timeConsumedInMS1 / 1000;
+console.log(timeConsumedInSecs1);
+
+let userWord2 = guessWord1;
+for (let i = 0; i < 5; i++) {
+  userWord2 = userWord2.replace("_", userAnswers1);
+}
+
+if (userWord2.toLowerCase() === word2) alert(" Ohho, Wrong word");
+ else if (timeConsumedInSecs1 > 5) alert(" Ohho, too slow");
+ else alert("You won, don't think you're genuis");
+
+
+
+
+ 
+
