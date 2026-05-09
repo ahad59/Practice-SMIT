@@ -79,7 +79,85 @@ class Elephant extends Animal {
     }
 }
 const elephant1 = new Elephant('Peter', 3);
-const elephant2 = new Elephant('daizy', 5);
+const elephant2 = new Elephant('Daizy', 5);
 console.log("===Elephant details======");
 elephant1.isHunting();
 elephant2.isHunting();
+class Flyingobj {
+    name;
+    constructor(name) {
+        this.name = name;
+    }
+    ;
+    flying() {
+        console.log(`${this.name} is flying right now.`);
+    }
+}
+class Eagle extends Flyingobj {
+    eating() {
+        console.log(`${this.name} is eating.`);
+    }
+}
+const myeagle = new Eagle("my eagle");
+myeagle.eating();
+myeagle.flying();
+class Human {
+    name;
+    constructor(name) {
+        this.name = name;
+    }
+    // Regular method
+    move() {
+        console.log(`${this.name} is moving`);
+    }
+}
+class Zain extends Human {
+    makeSound() {
+        console.log("Hurray!");
+    }
+}
+const zain = new Zain("Buddy");
+zain.makeSound();
+zain.move(); // Buddy is moving
+// arrow function is a shorter way to write a function,
+// it stores the entire function in a variable, 
+// it also passes a function as an argument.
+// here the actual function starts from = (a,b)
+const myFoo = (a, b) => {
+    if (b) {
+        const value = a + b;
+    }
+    console.log(a);
+    return 123;
+};
+let f = ["one", 1];
+// true cannot be pushed because it is boolean and only string and number data types can be stored only.
+// f.push(true);
+let g = [1];
+g.push(2);
+//"" cannot be pushed because it is a string data type and here only number data type can be stored.
+//g.push("");
+// this is array of objects
+let h = [];
+let i = {
+    name: "abc",
+    fatherName: "def",
+};
+i.rollNo = 5;
+if (i.rollNo) {
+    i.rollNo++;
+}
+function myFunc(a, b) {
+    if (b) {
+        const value = a + b;
+        return value;
+    }
+    return 0;
+}
+const k = myFunc(1, 2);
+const l = (a, b) => {
+    return 0;
+};
+const m = (a, b) => {
+    return a + b;
+};

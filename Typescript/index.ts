@@ -124,3 +124,99 @@ const elephant2 = new Elephant('Daizy', 5);
 console.log("===Elephant details======");
 elephant1.isHunting();
 elephant2.isHunting();
+
+
+abstract class Flyingobj {
+
+  constructor(public name: string){};
+
+  abstract eating(): void;
+
+  flying(): void {
+    console.log(`${this.name} is flying right now.`);
+  }
+}
+
+class Eagle extends Flyingobj {
+
+  eating(): void {
+    console.log(`${this.name} is eating.`);
+  }
+}
+
+const myeagle = new Eagle("my eagle");
+myeagle.eating();
+myeagle.flying();
+
+abstract class Human {
+  constructor(public name: string) {}
+
+  // Abstract method (no implementation)
+  abstract makeSound(): void;
+
+  // Regular method
+  move(): void {
+    console.log(`${this.name} is moving`);
+  }
+}
+
+class Zain extends Human {
+  makeSound(): void {
+    console.log("Hurray!");
+  }
+}
+
+const zain = new Zain("Buddy");
+zain.makeSound();
+zain.move(); // Buddy is moving
+
+// arrow function is a shorter way to write a function,
+// it stores the entire function in a variable, 
+// it also passes a function as an argument.
+
+// here the actual function starts from = (a,b)
+const myFoo: (a: number, b?: number) => number = (a, b) => {
+  if (b) {
+    const value = a + b;
+  }
+  console.log(a);
+  return 123;
+};
+
+let f: [string, number] = ["one", 1];
+// true cannot be pushed because it is boolean and only string and number data types can be stored only.
+// f.push(true);
+let g: number[] = [1];
+g.push(2);
+//"" cannot be pushed because it is a string data type and here only number data type can be stored.
+//g.push("");
+
+// this is array of objects
+let h: { name: string; fatherName: string }[] = [];
+
+let i: { name: string; fatherName: string; rollNo?: number } = {
+  name: "abc",
+   fatherName: "def",
+ };
+
+ i.rollNo = 5;
+
+ if (i.rollNo) {
+   i.rollNo++;
+ }
+
+ function myFunc(a: number, b: unknown): number | undefined {
+   if (b) {
+   const value = a + (b as number);
+   return value;
+ }
+return 0;
+ }
+
+ const k = myFunc(1, 2);
+ const l = (a: number, b: number): number => {
+   return 0;
+ };
+ const m: (a: number, b: number) => number = (a, b) => {
+   return a + b;
+ };
