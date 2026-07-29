@@ -1,0 +1,119 @@
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  min-height: 100vh;
+  padding: 24px 16px 60px;
+  margin: 0; /* added — prevents the browser's default 8px body margin from creating uneven edges */
+}
+
+h1 {
+  text-align: center;
+  color: #222222;
+  font-size: 2rem;
+  margin-bottom: 28px; /* added — was missing, so cards sat too close to the title */
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 28px;
+  background-color: #4361ee;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #1e44ff;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* added — visible outline for keyboard users tabbing to buttons */
+button:focus-visible {
+  outline: 3px solid #93a9ff;
+  outline-offset: 2px;
+}
+
+/* Add New Note button — small gap before the cards start */
+#add-note {
+  margin-bottom: 28px; /* added */
+}
+
+#note-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* added — centers cards as a group instead of them hugging the left edge on wide screens */
+}
+
+.note {
+  background-color: #ffffff; /* changed from rgb(158,157,157) — lighter card reads cleaner against the page background and makes text/buttons stand out more */
+  border-radius: 12px;
+  justify-content: center;
+  border: 1px solid #e2e2e2; /* softened from rgb(58,58,58) — dark border felt heavy against the lighter card */
+  margin: 12px auto; /* reduced top/bottom margin slightly (was 20px) since cards now have a wrapper gap too */
+  width: 100%;
+  max-width: 350px;
+  padding: 16px 18px; /* increased slightly from 12px for a bit more breathing room */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* added — subtle default shadow so cards feel raised even before hovering, not just flat */
+  transition: box-shadow 0.2s ease, transform 0.15s ease; /* added transform so the hover lift below animates smoothly */
+}
+
+.note:hover {
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.08); /* kept exactly as you had it */
+  transform: translateY(-2px); /* added — subtle lift on hover, pairs with the shadow */
+}
+
+.note button:first-of-type {
+  background-color: red;
+}
+
+.note button:first-of-type:hover {
+  background-color: rgb(248, 54, 54);
+}
+
+.note button:last-of-type {
+  background-color: rgb(29, 139, 29);
+}
+
+.note button:last-of-type:hover {
+  background-color: rgb(76, 161, 76);
+}
+
+.note button {
+  font-size: 0.8rem;
+  display: inline-block; /* changed from `inline` — inline can cause inconsistent spacing/vertical alignment between buttons since it ignores some box-model properties */
+  margin: 10px 8px 0 0; /* added — inline had no spacing, so buttons were likely touching each other and the paragraph above */
+  padding: 8px 16px; /* added — button had no padding beyond the shared `button` rule, so Delete/Edit may have looked cramped */
+}
+
+.note h2 {
+  margin-top: 2px;
+  margin-bottom: 6px; /* added — was missing, so the paragraph text crowded the title */
+  font-size: 1.3rem;
+  color: #1a1a1a; /* added — slightly darker than pure black for a softer look, previously inherited body's #222 */
+}
+
+.note p {
+  font-size: 0.9rem;
+  color: #444; /* added — softened from inherited #222 so paragraph text doesn't compete with the title */
+  white-space: pre-wrap; /* added — respects line breaks the user typed into note content instead of collapsing them */
+}
+
+/* added — small screens: let cards use full width instead of being squeezed */
+@media (max-width: 420px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .note {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,79 @@
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  min-height: 100vh;
+  padding: 24px 16px 60px;
+  margin: 0;
+}
+
+input,
+textarea {
+  display: block;
+  padding: 13px 16px;
+  margin: 0 auto 14px;
+  max-width: 400px;
+  min-width: 270px;
+  border: 2px solid transparent; 
+  border-radius: 10px; 
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fdf6d8;
+  color: #222;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease, transform 0.15s ease; /* added — smooths every state change below */
+}
+
+input {
+  margin-top: 60px;
+  cursor: text;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  cursor: text; 
+}
+
+input:hover,
+textarea:hover {
+  background-color: #fbf0bd;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0084ff;
+  box-shadow: 0 0 0 4px rgba(0, 132, 255, 0.25); /* softened + unified blue glow, same value for both fields */
+  background-color: #fffdf3;
+  transform: translateY(-1px); /* tiny lift on focus, consistent with the hover-lift pattern from your card styling */
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 28px;
+  background-color: #4361ee;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease; /* added box-shadow to the transition list for the new hover glow below */
+}
+
+button:hover {
+  background-color: #3651d4;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.35); /* added — subtle glow on hover, ties button visually to the blue focus color used on inputs */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus-visible {
+  outline: 3px solid #93a9ff; /* added — accessibility: visible outline for keyboard users tabbing to the button */
+  outline-offset: 2px;
+}

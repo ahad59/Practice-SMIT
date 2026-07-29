@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background: linear-gradient(135deg, #f7e9e9 0%, #e4d6d6 50%, #ecdada 100%);
+  /* soft diagonal gradient — replaces your flat #e4d6d6 with more depth */
+  display: flex; /* centers the body/card both vertically and horizontally */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0; /* removed margin-top:80px — centering is now handled by html's flexbox */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px); /* frosted-glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 50px rgba(120, 60, 90, 0.15),
+    0 2px 8px rgba(120, 60, 90, 0.08); /* layered shadow — soft + close, reads as floating */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: cardEntrance 0.5s ease-out; /* subtle fade/slide-in on page load */
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 0;
+  margin-bottom: 2rem; /* reduced slightly since body's own padding already adds space */
+  color: #6b3a4d; /* deep mauve — pulled from your pink button for a cohesive palette */
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+input {
+  display: block;
+  padding: 13px 16px;
+  margin: 0 auto 16px;
+  width: 100%; /* changed from fixed min/max-width — now fills the card responsively */
+  border: 2px solid transparent; /* added — needed so :focus border-color is actually visible */
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  cursor: text; /* changed from pointer — correct cursor for a typing field */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease, transform 0.15s ease; /* added — smooths hover/focus */
+}
+
+input:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(120, 60, 90, 0.08); /* subtle lift on hover, before focus even happens */
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(241, 125, 232, 0.7); /* changed from blue — now matches your pink button */
+  box-shadow: 0 0 0 4px rgba(241, 125, 232, 0.2);
+  background-color: #fff;
+  transform: translateY(-1px);
+}
+
+button {
+  display: block;
+  background: linear-gradient(135deg, #f17de8, #e05fd1);
+  /* changed — gradient instead of flat pink, adds richness */
+  border: none; /* fixed — was missing on your base rule, causing default-border-then-snap on hover */
+  margin: 24px auto 0;
+  cursor: pointer;
+  padding: 13px 20px;
+  border-radius: 10px;
+  width: 100%; /* changed from 120px — full-width reads more confident inside the card */
+  color: #fff; /* added — your original had no text color set, likely defaulting to black on a pink background */
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(224, 95, 209, 0.35); /* soft glow matching the button color */
+  transition: background-color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease; /* added — smooths hover/active states */
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ee6ce3, #d94cc8);
+  box-shadow: 0 6px 20px rgba(224, 95, 209, 0.45);
+  transform: translateY(-2px); /* subtle lift on hover */
+}
+
+button:active {
+  transform: scale(0.98) translateY(0);
+}
+
+button:focus-visible {
+  outline: 3px solid #f5b8ee; /* added — accessibility outline for keyboard users */
+  outline-offset: 3px;
+}
+
+
+a {
+  display: block;
+  margin-top: 20px;
+  color: #a15a8f;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: #e05fd1;
+  text-decoration: underline;
+}
+
+
+@media (max-width: 460px) {
+  body {
+    padding: 36px 24px;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

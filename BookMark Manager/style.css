@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  min-height: 100vh;
+  padding: 24px 16px 60px;
+}
+
+h1 {
+  text-align: center;
+  color: #2b2d42;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 14px;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 28px;
+  background-color: #4361ee;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+ 
+button:hover {
+  background-color: #3651d4;
+}
+ 
+button:active {
+  transform: scale(0.98);
+}
+
+p {
+  text-align: center;
+  margin-top: 16px;
+  color: #555;
+}
+ 
+a {
+  color: #4361ee;
+  text-decoration: none;
+}
+ 
+a:hover {
+  text-decoration: underline;
+}
+
+#add-bookmark {
+  display: block;
+  margin: 0 auto 32px;
+}
+
+#bookmark-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.bookmark {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.15s ease;
+}
+
+.bookmark:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.bookmark h3 {
+  color: #2b2d42;
+  margin-bottom: 6px;
+}
+
+.bookmark button {
+  display: inline-block;
+  margin: 8px 8px 0 0;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.bookmark button:first-of-type {
+  background-color: #ef4444;
+}
+
+.bookmark button:first-of-type:hover {
+  background-color: #dc2626;
+}
+
+.bookmark button:last-of-type {
+  background-color: #6b7280;
+}
+
+.bookmark button:last-of-type:hover {
+  background-color: #4b5563;
+}
+
+.bookmark a {
+  display: inline-block;
+  margin-bottom: 10px;
+  word-break: break-all;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+}
